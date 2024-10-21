@@ -1,14 +1,24 @@
-<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
-        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
-        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:orcl</property>
-        <property name="hibernate.connection.username">system</property>
-        <property name="hibernate.connection.password">tiger</property>
+        <!-- Define the Hibernate dialect for MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+        <!-- MySQL JDBC driver -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!-- JDBC connection URL -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property>
+        <!-- Database username -->
+        <property name="hibernate.connection.username">root</property>
+        <!-- Database password -->
+        <property name="hibernate.connection.password"></property>
+        <!-- Automatically update database schema -->
         <property name="hibernate.hbm2ddl.auto">update</property>
+        <!-- Show SQL queries in the console -->
         <property name="hibernate.show_sql">true</property>
-        <mapping resource="com/codeo/project/MyHibernateProject/Employee.hbm.xml" />
+        <!-- Mapping resource -->
+        <mapping resource="Employee.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

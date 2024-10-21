@@ -1,0 +1,13 @@
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.codeo.project.MyHibernateProject.Employee" table="EMPLOYEEX">
+        <id name="emp_id" column="EMP_ID" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="emp_name" column="EMP_NAME" type="string"/>
+        <property name="emp_salary" column="EMP_SALARY" type="double"/>
+        <property name="emp_address" column="EMP_ADDRESS" type="string"/>
+
+    </class>
+</hibernate-mapping>
