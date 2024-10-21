@@ -4,16 +4,16 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <!-- Define the Hibernate dialect for MySQL -->
-        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
-        <!-- MySQL JDBC driver -->
-        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <!-- Define the Hibernate dialect for Oracle -->
+        <property name="hibernate.dialect">org.hibernate.dialect.Oracle8iDialect</property>
+        <!-- Oracle JDBC driver -->
+        <property name="hibernate.connection.driver_class">oracle.jdbc.OracleDriver</property>
         <!-- JDBC connection URL -->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/test</property>
+        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521/XE</property>
         <!-- Database username -->
-        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.username">system</property>
         <!-- Database password -->
-        <property name="hibernate.connection.password"></property>
+        <property name="hibernate.connection.password">tiger</property>
         <!-- Automatically update database schema -->
         <property name="hibernate.hbm2ddl.auto">update</property>
         <!-- Show SQL queries in the console -->
