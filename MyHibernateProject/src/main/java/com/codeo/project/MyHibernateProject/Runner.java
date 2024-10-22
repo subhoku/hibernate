@@ -32,6 +32,9 @@ public class Runner {
 	   
 	     
 	     session.save(employee);
+	     //This method gives persistence instruction to save object and also
+	     //returns either assigned or generated identity value back to app as return value
+	     
 	     tx.commit();
 	     session.close();
 	     factory.close();
