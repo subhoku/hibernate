@@ -19,6 +19,6 @@ public class Employee implements Serializable {
 	private String emp_name;
 	private double emp_salary;
 	private String emp_address;
-
+    private String emp_mobileno;
 	
 }

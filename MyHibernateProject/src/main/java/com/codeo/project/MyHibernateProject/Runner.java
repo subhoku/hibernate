@@ -21,6 +21,7 @@ public class Runner {
 	     employee.setEmp_name("sudarshan");
 	     employee.setEmp_salary(982372.32);
 	     employee.setEmp_address("Nagpur");
+	     employee.setEmp_mobileno("8237817366");
 	   
 	     
 	     session.save(employee);
