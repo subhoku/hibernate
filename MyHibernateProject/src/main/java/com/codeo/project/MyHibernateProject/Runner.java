@@ -12,10 +12,17 @@ public class Runner {
 	public static void main(String[] args) {
 		//create session from HibernateUtil
 	
-		SessionFactory sessionFactory=new Configuration().configure().buildSessionFactory();
-	     Session session=sessionFactory.openSession();
-	     Transaction transaction=session.beginTransaction();
-	     
+		Configuration config=new Configuration();
+		////activates the hibernate framework based of jar files that are added
+		config.configure("hibernate.cfg.xml");
+		//here configure(-) method loads the given hibernate cfg file
+		//it will check it is wellformed or not also creattes 
+		//meta data and even stores same info in config class object
+	     SessionFactory factory=config.buildSessionFactory();
+	     //all above hiberante session factory will be created as complex heavy obj
+	     //and return the object
+	     Session session=factory.openSession();
+	     Transaction tx=session.beginTransaction();
 	     Employee employee=new Employee();
 	     employee.setEmp_id(1);
 	     employee.setEmp_name("sudarshan");
@@ -25,9 +32,9 @@ public class Runner {
 	   
 	     
 	     session.save(employee);
-	     transaction.commit();
+	     tx.commit();
 	     session.close();
-	     sessionFactory.close();
+	     factory.close();
 	}
 
 }
