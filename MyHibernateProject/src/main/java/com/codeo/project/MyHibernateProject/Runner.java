@@ -36,8 +36,15 @@ public class Runner {
 	     //returns either assigned or generated identity value back to app as return value
 	     
 	     tx.commit();
+	     //takes all the persistence instruction that given 
+	     //through session object completes them by
+	     //executing jdbc code+SQL Queries in database coftware
 	     session.close();
+	     //closses the con between db and returns conn object
+	     //vanishes the Dailect, O-r mapping metadata
 	     factory.close();
+	     //closes the session factory
+	     //vanishes all obj that associate with Session Factory object
 	}
 
 }
