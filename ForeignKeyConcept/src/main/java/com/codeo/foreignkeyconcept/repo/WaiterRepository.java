@@ -2,6 +2,7 @@ package com.codeo.foreignkeyconcept.repo;
 
 
 import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.TransactionException;
 
@@ -10,6 +11,9 @@ import com.codeo.project.MyHibernateProject.HibernateUtil;
 
 public class WaiterRepository {
 
+public WaiterRepository(SessionFactory sessionFactory) {
+		// TODO Auto-generated constructor stub
+	}
 public void saveWaiter(Waiter waiter) {
 		Transaction transaction=null;
 		try(Session session=HibernateUtil.getSessionFactory().openSession())
