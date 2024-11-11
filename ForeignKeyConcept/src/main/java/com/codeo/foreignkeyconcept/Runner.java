@@ -27,7 +27,7 @@ public class Runner {
             waiter.setManager(manager);
 
             // Add the waiter to the manager's set of waiters
-            manager.getWaiter().add(waiter);
+            manager.getWaiters().add(waiter);
 
             // Save manager and waiter
             System.out.println("Saving manager and waiter...");

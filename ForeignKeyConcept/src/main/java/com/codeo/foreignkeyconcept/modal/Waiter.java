@@ -1,28 +1,24 @@
 package com.codeo.foreignkeyconcept.modal;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+import javax.persistence.*;
 
-import lombok.Data;
 @Entity
-@Table(name="waiter")
-
-@Data
+@Table(name = "waiter")
+@Getter
+@Setter
 public class Waiter {
-     @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-     
-     @Column(name="name")
-	private String name;
-     @ManyToOne(fetch=FetchType.LAZY)
-     @JoinColumn(name="manager_id", nullable = false)
-	private Manager manager;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "waiter_seq")
+    @SequenceGenerator(name = "waiter_seq", sequenceName = "waiter_seq", allocationSize = 1)
+    private Long id;
+
+    @Column(name = "name")
+    private String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "manager_id", nullable = false)
+    private Manager manager;
+    // 'manager' is a reference to the Manager entity that this Waiter reports to.
 }
